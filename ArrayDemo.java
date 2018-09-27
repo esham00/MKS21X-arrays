@@ -1,10 +1,15 @@
 public class ArrayDemo {
   public static void main(String[] args) {
-    int [] newArray = new int [5];
-    for (int i = 0; i < newArray.length; i++) {
-      newArray[i] = 10 + 2 * i;
-    }
+    int [] newArray = {2, 4, 6, 8, 10};
+    int [][] twoD = new int [][]{
+      {0, 1, 2, 3, 4},
+      {0, 1, 2, 3, 4},
+      {0, 1, 2, 3, 4},
+      {0, 1, 2, 3, 4},
+      {0, 1, 2, 3, 4}
+    };
     printArray(newArray);
+    printArray(twoD);
   }
   public static void printArray(int[]ary){
   for (int i = 0; i < ary.length; i++) {
@@ -13,7 +18,20 @@ public class ArrayDemo {
     }
     else {
     System.out.print(ary[i] + ", ");
+      }
+    }
   }
+  public static void printArray(int[][]ary) {
+    for (int i = 0; i < ary.length; i++) {
+      System.out.println();
+      for (int j = 0; j < ary[i].length; j++) {
+        if (j == 0) {
+          System.out.print(ary[i][j]);
+        }
+        else {
+          System.out.print(", " + ary[i][j]);
+        }
+      }
     }
   }
 }
