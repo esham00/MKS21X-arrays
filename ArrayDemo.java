@@ -8,8 +8,12 @@ public class ArrayDemo {
       {0, 1, 2, 3, 4},
       {0, 1, 2, 3, 4}
     };
+    System.out.print("One-D array printing \n");
     printArray(newArray);
+    System.out.println("Two-D array printing");
     printArray(twoD);
+    System.out.print("\nCounting Zeros \n");
+    System.out.println(countZeros2D(twoD));
   }
   public static void printArray(int[]ary){
   for (int i = 0; i < ary.length; i++) {
@@ -34,4 +38,15 @@ public class ArrayDemo {
       }
     }
   }
+  public static int countZeros2D (int[][] nums) {
+	 int zeros = 0;
+	 for (int i = 0; i < nums.length; i++) {
+		 for (int j = 0; j < nums[i].length; j++) {
+			 if (nums[i][j] == 0) {
+				 zeros++;
+			 }
+		 }
+	 }
+	 return zeros;
+ }
 }
