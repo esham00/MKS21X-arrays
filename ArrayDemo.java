@@ -10,10 +10,12 @@ public class ArrayDemo {
     };
     System.out.print("One-D array printing \n");
     printArray(newArray);
-    System.out.println("Two-D array printing");
+    System.out.println("\nTwo-D array printing");
     printArray(twoD);
     System.out.print("\nCounting Zeros \n");
     System.out.println(countZeros2D(twoD));
+    System.out.println("Filling 2D with 1s and 3s");
+    fill2D(twoD);
   }
   public static void printArray(int[]ary){
   for (int i = 0; i < ary.length; i++) {
@@ -27,7 +29,7 @@ public class ArrayDemo {
   }
   public static void printArray(int[][]ary) {
     for (int i = 0; i < ary.length; i++) {
-      System.out.println();
+      if (i != 0) {System.out.println();}
       for (int j = 0; j < ary[i].length; j++) {
         if (j == 0) {
           System.out.print(ary[i][j]);
@@ -48,5 +50,18 @@ public class ArrayDemo {
 		 }
 	 }
 	 return zeros;
+ }
+ public static void fill2D(int [][] vals) {
+   for (int i = 0; i < vals.length; i++) {
+     for (int j = 0; j < vals[i].length; j++) {
+       if (i == j) {
+         vals[i][j] = 3;
+       }
+       else {
+         vals[i][j] = 1;
+       }
+     }
+   }
+   printArray(vals);
  }
 }
